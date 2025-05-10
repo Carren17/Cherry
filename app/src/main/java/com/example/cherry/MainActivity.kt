@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.example.cherry.navigation.AppNavGraph
+import com.example.cherry.navigation.AppNavHost
 import com.example.cherry.ui.theme.CherryTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CherryTheme {
                 val navController = rememberNavController()
-                AppNavGraph(navController = navController)
+                AppNavHost()
                 }
             }
         }
