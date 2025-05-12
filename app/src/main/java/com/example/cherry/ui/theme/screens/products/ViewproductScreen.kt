@@ -109,7 +109,6 @@
 //}
 package com.example.cherry.ui.theme.screens.products
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -139,19 +138,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.cherry.data.ProductViewModel
-import com.example.cherry.R
-import com.example.cherry.model.ProductModel
+import com.example.cherry.models.ProductModel
 import com.example.cherry.navigation.ROUTE_UPDATE_PRODUCT
 
 
@@ -161,7 +157,7 @@ fun ViewProducts(navController: NavHostController){
     val productRepository = ProductViewModel()
     val emptyUploadState = remember {
         mutableStateOf(
-            ProductModel("","","","",))
+            ProductModel("","","",""))
     }
     val emptyUploadListState = remember {
         mutableStateListOf<ProductModel>()
@@ -180,14 +176,14 @@ fun ViewProducts(navController: NavHostController){
                 color= Color.Black)
             Spacer(modifier = Modifier.height(20.dp))
 
-            LazyColumn(){
+            LazyColumn{
                 items(products){
                     ProductItem(
                         productname = it.name,
                         productprice = it.price,
                         desc = it.desc,
                         productId = it.productId,
-                        imageUrl = it.imageUrl,
+                        imageUrl = it.image,
                         navController = navController,
                         productRepository = productRepository
 

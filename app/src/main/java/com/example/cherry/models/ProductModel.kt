@@ -5,7 +5,7 @@ data class ProductModel(
     var price: String = "",
     var desc: String = "",
     var productId: String = "",
-    var imageUrl: String = "",
+    var image: String = "",
 
 
 )

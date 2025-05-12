@@ -9,7 +9,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.example.cherry.model.ProductModel
+import com.example.cherry.models.ProductModel
 import com.example.cherry.navigation.ROUTE_VIEW_PRODUCTS
 import com.example.cherry.network.ImgurService
 import com.google.firebase.database.*
